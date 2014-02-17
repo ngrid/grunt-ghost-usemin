@@ -77,13 +77,6 @@ describe('File', function() {
     assert.equal('<![endif]-->', file.blocks[0].conditionalEnd);
   });
 
-  it('should throw an exception if it finds RequireJS blocks', function() {
-    var filename = __dirname + '/fixtures/requirejs.html';
-    assert.throws( function() {
-      new File(filename);
-    }, Error);
-  });
-
   it('should not take into consideration path of the source file', function () {
     var filename = __dirname + '/fixtures/usemin.html';
     var file = new File(filename);

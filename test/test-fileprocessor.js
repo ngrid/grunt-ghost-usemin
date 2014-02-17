@@ -58,7 +58,7 @@ describe('FileProcessor', function() {
 		it('should replace css blocks with a link to a stylesheet', function() {
 			var fp = new FileProcessor('html',{});
 			var block = {
-				dest: 'foo.css',
+				rawDest: 'foo.css',
 				type: 'css',
 				indent: '  '
 			};
@@ -70,7 +70,7 @@ describe('FileProcessor', function() {
 		it('should replace js blocks with a link to a javascript file', function() {
 			var fp = new FileProcessor('html',{});
 			var block = {
-				dest: 'foo.js',
+				rawDest: 'foo.js',
 				type: 'js',
 				indent: '  '
 			};
@@ -82,7 +82,7 @@ describe('FileProcessor', function() {
     it('should preserve defer attribute (JS)', function () {
       var fp = new FileProcessor('html',{});
       var block = {
-        dest: 'foo.js',
+        rawDest: 'foo.js',
         type: 'js',
         defer: true,
         indent: '  '
@@ -95,7 +95,7 @@ describe('FileProcessor', function() {
     it('should preserve media attribute', function () {
       var fp = new FileProcessor('html',{});
       var block = {
-        dest: 'foo.css',
+        rawDest: 'foo.css',
         type: 'css',
         media: '(min-width:980px)',
         indent: '  '
@@ -108,7 +108,7 @@ describe('FileProcessor', function() {
     it('should preserve IE conditionals for js blocks', function () {
       var fp = new FileProcessor('html',{});
       var block = {
-        dest: 'foo.js',
+        rawDest: 'foo.js',
         type: 'js',
         conditionalStart: '<!--[if (lt IE 9) & (!IEmobile)]>',
         conditionalEnd: '<![endif]-->',
@@ -122,7 +122,7 @@ describe('FileProcessor', function() {
     it('should preserve IE conditionals for css blocks', function () {
       var fp = new FileProcessor('html',{});
       var block = {
-        dest: 'foo.css',
+        rawDest: 'foo.css',
         type: 'css',
         conditionalStart: '<!--[if (lt IE 9) & (!IEmobile)]>',
         conditionalEnd: '<![endif]-->',
