@@ -1,5 +1,5 @@
 {
-  "name": "grunt-usemin",
+  "name": "grunt-ghost-usemin",
   "version": "2.0.1",
   "description": "Replaces references to non-optimized scripts or stylesheets into a set of HTML files (or any templates/views).",
   "keywords": [
